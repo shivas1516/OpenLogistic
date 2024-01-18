@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet"> <!-- Add custom styles here -->
+
+  <style>
+    #parcelTracking {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #trackingForm {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 25px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #trackingResult {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceUser</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="tracking.html">
+          <i class="bi bi-person"></i>
+          <span>Track</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-person"></i>
+          <span>New Adimin</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <!-- ======= Main Section ======= -->
+  <main id="main">
+    <div class="pagetitle">
+      <h1>Track Parcel</h1>
+    </div><!-- End Page Title -->
+
+    <!-- Parcel Tracking Section -->
+    <section id="parcelTracking" class="container mt-5">
+      <form id="trackingForm" class="mb-4">
+        <input type="text" id="trackingCode" placeholder="Enter tracking code..." required>
+        <button type="button" onclick="trackParcel()">Track Parcel</button>
+      </form>
+
+      <div id="trackingResult"></div>
+    </section>
+
+  </main><!-- End Main Section -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Your custom scripts go here -->
+  <script>
+    function trackParcel() {
+      var trackingCode = document.getElementById("trackingCode").value;
+
+      // Simulate an API request to retrieve parcel data
+      simulateAPICall(trackingCode)
+        .then(function(response) {
+          displayResult(response);
+        })
+        .catch(function(error) {
+          displayResult("Error: Unable to fetch parcel data");
+        });
+    }
+
+    function simulateAPICall(trackingCode) {
+      // Simulate an asynchronous API call
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          // Replace this with actual data retrieval logic
+          // from your server/database
+          var parcelData = {
+            status: "In transit",
+            sender: {
+              fullName: "John Doe",
+              address: "123 Main St, Cityville, CA 12345, USA",
+              contactNumber: "123-456-7890",
+              email: "john.doe@example.com"
+            },
+            recipient: {
+              fullName: "Jane Smith",
+              address: "456 Oak St, Townsville, NY 67890, USA",
+              contactNumber: "987-654-3210",
+              email: "jane.smith@example.com"
+            },
+            parcelDetails: {
+              contents: "Electronics",
+              weight: "2.5 kg",
+              dimensions: "10x8x5"
+            },
+            deliveryOptions: {
+              shippingService: "Express"
+            },
+            specialInstructions: "Handle with care",
+            fragileNotification: true
+          };
+
+          resolve(parcelData);
+        }, 1000); // Simulating a delay of 1 second
+      });
+    }
+
+    function displayResult(data) {
+      var resultElement = document.getElementById("trackingResult");
+      resultElement.innerHTML = "";
+
+      if (data) {
+        var statusElement = document.createElement("p");
+        statusElement.innerHTML = `<strong>Status:</strong> ${data.status}`;
+        resultElement.appendChild(statusElement);
+
+        var senderInfo = createSection("Sender Information", data.sender);
+        var recipientInfo = createSection("Recipient Information", data.recipient);
+        var parcelDetails = createSection("Parcel Details", data.parcelDetails);
+        var deliveryOptions = createSection("Delivery Options", data.deliveryOptions);
+        var specialInstructions = createSection("Special Instructions", {
+          Instructions: data.specialInstructions,
+          "Fragile Notification": data.fragileNotification ? "Yes" : "No"
+        });
+
+        resultElement.appendChild(senderInfo);
+        resultElement.appendChild(recipientInfo);
+        resultElement.appendChild(parcelDetails);
+        resultElement.appendChild(deliveryOptions);
+        resultElement.appendChild(specialInstructions);
+      } else {
+        resultElement.textContent = "No data found for the provided tracking code.";
+      }
+    }
+
+    function createSection(title, data) {
+      var section = document.createElement("div");
+      section.classList.add("tracking-section");
+      section.innerHTML = `<h3>${title}</h3>`;
+      
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          var label = document.createElement("strong");
+          label.textContent = key + ": ";
+          var value = document.createTextNode(data[key]);
+
+          var paragraph = document.createElement("p");
+          paragraph.appendChild(label);
+          paragraph.appendChild(value);
+
+          section.appendChild(paragraph);
+        }
+      }
+
+      return section;
+    }
+  </script>
+
+</body>
+</html>
