@@ -1,3 +1,5 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +56,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{% static 'index.html' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <img src="{% static 'img/logo.png' %}" alt="">
         <span class="d-none d-lg-block">NiceUser</span>
       </a>
@@ -146,7 +148,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{% static 'index.html' %}">
+        <a class="nav-link " href="{% url 'index' %}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -166,24 +168,39 @@
 
   </aside><!-- End Sidebar-->
 
+<!-- ======= Main Section ======= -->
+<main id="main">
+  <div class="pagetitle">
+    <h1>Track Parcel</h1>
+  </div><!-- End Page Title -->
 
-  <!-- ======= Main Section ======= -->
-  <main id="main">
-    <div class="pagetitle">
-      <h1>Track Parcel</h1>
-    </div><!-- End Page Title -->
 
     <!-- Parcel Tracking Section -->
-    <section id="parcelTracking" class="container mt-5">
-      <form id="trackingForm" class="mb-4">
-        <input type="text" id="trackingCode" placeholder="Enter tracking code..." required>
-        <button type="button" onclick="trackParcel()">Track Parcel</button>
-      </form>
+    <section id="parcelTracking">
+      <div class="card">
+        <div class="card-body">
 
-      <div id="trackingResult"></div>
-    </section>
+          <!-- Tracking Form -->
+          <form id="trackingForm" class="mt-4 mb-4">
+            <div class="input-group">
+              <input type="text" id="trackingCode" class="form-control" placeholder="Enter tracking code..." required>
+              <button type="button" class="btn btn-primary" onclick="trackParcel()">Track Parcel</button>
+            </div>
+          </form><!-- End Tracking Form -->
 
-  </main><!-- End Main Section -->
+          <!-- Tracking Result -->
+          <div id="trackingResult"></div>
+
+        </div>
+      </div>
+    </section><!-- End Parcel Tracking Section -->
+
+  </div>
+</main><!-- End Main Section -->
+
+
+
+
 
 <!-- Vendor JS Files -->
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
