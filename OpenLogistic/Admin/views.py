@@ -1,32 +1,32 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'Admin/index.html')
+    return render(request, 'index.html')
 
 def shipped(request):
-    return render(request, 'Admin/shipped.html')
+    return render(request, 'shipped.html')
 
 def delivery_pending(request):
-    return render(request, 'Admin/delivery pending.html')
+    return render(request, 'delivery pending.html')
 
 def ship_pending(request):
-    return render(request, 'Admin/ship pending.html')
+    return render(request, 'ship pending.html')
 
 def all_parcel(request):
-    return render(request, 'Admin/all parcel.html')
+    return render(request, 'all parcel.html')
 
-def tracking(request):
-    return render(request, 'Admin/tracking.html')
+def admintracking(request):
+    return render(request, 'admintracking.html')
 
 def users_profile(request):
-    return render(request, 'Admin/users-profile.html')
+    return render(request, 'users-profile.html')
 
 def pages_login(request):
-    return render(request, 'Admin/pages-login.html')
+    return render(request, 'pages-login.html')
 
 def pages_register(request):
-    return render(request, 'Admin/pages-register.html')
+    return render(request, 'pages-register.html')
 
 def pages_contact(request):
-    return render(request, 'Admin/pages-contact.html')
+    return render(request, 'pages-contact.html')
 
