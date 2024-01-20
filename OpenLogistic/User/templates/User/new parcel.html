@@ -54,7 +54,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'userindex' %}" class="logo d-flex align-items-center">
         <img src="{% static 'img/logo.png' %}" alt="">
         <span class="d-none d-lg-block">NiceUser</span>
       </a>
@@ -112,7 +112,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{% url 'index' %}">
+        <a class="nav-link " href="{% url 'userindex' %}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -176,7 +176,7 @@
   <div class="row mb-3">
       <label for="senderNumber" class="col-sm-2 col-form-label">Sender Phone</label>
       <div class="col-sm-10">
-          <input type="number" class="form-control" id="senderNumber" name="sender_phone" required>
+          <input type="text" class="form-control" id="senderNumber" name="sender_phone" required>
           <div class="invalid-feedback">Please, enter a valid number!</div>
       </div>
   </div>
@@ -186,9 +186,9 @@
       <div class="col-sm-10">
           <select class="form-select" name="from_branch" aria-label="Shipping Service" required>
               <option selected>-Select service-</option>
-              <option value="1">Standard Service</option>
-              <option value="2">Express service</option>
-              <option value="3">Over Night Service</option>
+              <option value="Nungambakkam, Chennai">Nungambakkam, Chennai </option>
+              <option value="Guindy, Chennai">Guindy, Chennai</option>
+              <option value="Anna Nagar, Chennai">Anna Nagar, Chennai</option>
           </select>
           <div class="invalid-feedback">Please, select a shipping service!</div>
       </div>
@@ -216,7 +216,7 @@
   <div class="row mb-3">
       <label for="recipientNumber" class="col-sm-2 col-form-label">Recipient Contact</label>
       <div class="col-sm-10">
-          <input type="number" class="form-control" id="recipientNumber" name="recipient_contact" required>
+          <input type="text" class="form-control" id="recipientNumber" name="recipient_contact" required>
           <div class="invalid-feedback">Please, enter a valid number!</div>
       </div>
   </div>
@@ -226,9 +226,10 @@
       <div class="col-sm-10">
           <select class="form-select" name="to_branch" aria-label="Shipping Service" required>
               <option selected>-Select service-</option>
-              <option value="1">Standard Service</option>
-              <option value="2">Express service</option>
-              <option value="3">Over Night Service</option>
+              <option value="Old Bus Stant, Thanjavur">Old Bus Stant, Thanjavur</option>
+              <option value="Rajan Road, Thanjavur">Rajan Road, Thanjavur</option>
+              <option value="South Rampart, Thanjavur">South Rampart, Thanjavur</option>
+              <option value="New Bus Stant, Thanjavur">New Bus Stant, Thanjavur</option>
           </select>
           <div class="invalid-feedback">Please, select a shipping service!</div>
       </div>
@@ -258,9 +259,9 @@
       <div class="col-sm-10">
           <select class="form-select" name="shipping_service" aria-label="Shipping Service" required>
               <option selected>-Select service-</option>
-              <option value="1">Standard Service</option>
-              <option value="2">Express service</option>
-              <option value="3">Over Night Service</option>
+              <option value="Standard Service">Standard Service</option>
+              <option value="Express service">Express service</option>
+              <option value="Over Night Service">Over Night Service</option>
           </select>
           <div class="invalid-feedback">Please, select a shipping service!</div>
       </div>
@@ -268,21 +269,21 @@
 
   <div class="col-12">
       <div class="form-check">
-          <input class="form-check-input" name="fragile" type="checkbox" value="" id="fragileCheckbox">
+          <input class="form-check-input" name="sensitive_content" type="checkbox" value="" id="fragileCheckbox">
           <label class="form-check-label" for="fragileCheckbox">Fragile or sensitive content notification</label>
       </div>
   </div>
 
-  <!-- Terms and Conditions -->
-  <h5 class="card-title">Terms and Conditions</h5>
-  <div class="col-12">
-      <div class="form-check">
-          <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-          <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and
-                  conditions</a></label>
-          <div class="invalid-feedback">You must agree before submitting.</div>
-      </div>
-  </div>
+<!-- Terms and Conditions -->
+<h5 class="card-title">Terms and Conditions</h5>
+<div class="col-12">
+    <div class="form-check">
+        <input class="form-check-input" name="terms" type="checkbox" value="on" id="acceptTerms" required>
+        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+        <div class="invalid-feedback">You must agree before submitting.</div>
+    </div>
+</div>
+
 
   <!-- Loading Placeholder -->
   <div class="loading d-block">Loading...</div>

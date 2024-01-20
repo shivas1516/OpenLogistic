@@ -28,11 +28,11 @@ class Parcel(models.Model):
     parcel_description = models.TextField()
     parcel_weight = models.FloatField()
     shipping_service = models.CharField(max_length=255)
-    fragile = models.BooleanField(default=False)
+    sensitive_content = models.BooleanField(default=False, blank=True, null=True)
+
 
     parcel_status = models.CharField(max_length=255)
     staff_assigned_detail = models.ForeignKey('Staff.Staff', on_delete=models.SET_NULL, null=True, blank=True)
-    safe_product = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Parcel ID: {self.parcel_id}, Status: {self.parcel_status}"

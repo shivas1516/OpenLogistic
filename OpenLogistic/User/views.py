@@ -1,7 +1,7 @@
 # User/views.py
 from django.shortcuts import render
 
-def index(request):
+def userindex(request):
     return render(request, 'User/index.html')
 
 def new_parcel(request):

@@ -4,7 +4,7 @@ from Admin.views import user_parcel_form_view
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.userindex, name='userindex'),
     path('new-parcel/', views.new_parcel, name='new_parcel'),
     path('tracking/', views.tracking, name='tracking'),
     path('users-profile/', views.users_profile, name='users-profile'),
