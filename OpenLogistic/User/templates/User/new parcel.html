@@ -132,132 +132,132 @@
   </aside><!-- End Sidebar -->
 
   <main id="main" class="main">
-
     <div class="pagetitle">
       <h1>New Parcel</h1>
     </div><!-- End Page Title -->
-
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Sender Information</h5>
-        <!-- Sender Form -->
-        <form class="needs-validation" novalidate>
+        <!-- Entire Form -->
+        <form class="php-email-form needs-validation" action="{% url 'submit_user_parcel_form' %}" method="post" novalidate>
+          <!-- Sender Information -->
+          {% csrf_token %}
+          <h5 class="card-title">Sender Information</h5>
           <div class="row mb-3">
             <label for="senderName" class="col-sm-2 col-form-label">Sender Name</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="senderName" required>
+              <input type="text" class="form-control" id="senderName" name="senderName" required>
               <div class="invalid-feedback">Please, enter your name!</div>
             </div>
           </div>
+  
           <div class="row mb-3">
             <label for="senderTextarea" class="col-sm-2 col-form-label">From Address</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="senderTextarea" style="height: 100px" required></textarea>
+              <textarea class="form-control" id="senderTextarea" name="senderTextarea" style="height: 100px" required></textarea>
               <div class="invalid-feedback">Please, enter sender's details!</div>
             </div>
           </div>
+  
           <div class="row mb-3">
             <label for="senderNumber" class="col-sm-2 col-form-label">Sender Phone</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="senderNumber" required>
+              <input type="number" class="form-control" id="senderNumber" name="senderNumber" required>
               <div class="invalid-feedback">Please, enter a valid number!</div>
             </div>
           </div>
+  
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label">Select Nearby</label>
             <div class="col-sm-10">
-              <select class="form-select" aria-label="Shipping Service" required>
-                <option selected>-Select Nearby-</option>
-                <option value="1">Standard Service</option>
-                <option value="2">Express service</option>
-                <option value="3">Over Night Service</option>
-              </select>
-              <div class="invalid-feedback">Please, select a shipping service!</div>
-            </div>
-          </div>
-        </form>
-        <!-- End Sender Form -->
-
-        <h5 class="card-title">Recipient Information</h5>
-        <!-- Recipient Form -->
-        <form class="needs-validation" novalidate>
-          <div class="row mb-3">
-            <label for="recipientName" class="col-sm-2 col-form-label">Recipient Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="recipientName" required>
-              <div class="invalid-feedback">Please, enter recipient's name!</div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label for="recipientTextarea" class="col-sm-2 col-form-label">To Address</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" id="recipientTextarea" style="height: 100px" required></textarea>
-              <div class="invalid-feedback">Please, enter recipient's details!</div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label for="recipientNumber" class="col-sm-2 col-form-label">Recipient Contact</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="recipientNumber" required>
-              <div class="invalid-feedback">Please, enter a valid number!</div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Select Nearby</label>
-            <div class="col-sm-10">
-              <select class="form-select" aria-label="Shipping Service" required>
-                <option selected>-Select Nearby-</option>
-                <option value="1">Standard Service</option>
-                <option value="2">Express service</option>
-                <option value="3">Over Night Service</option>
-              </select>
-              <div class="invalid-feedback">Please, select a shipping service!</div>
-            </div>
-          </div>
-        </form>
-        <!-- End Recipient Form -->
-
-        <h5 class="card-title">Parcel Details</h5>
-        <!-- Parcel Form -->
-        <form class="needs-validation" novalidate>
-          <div class="row mb-3">
-            <label for="parcelTextarea" class="col-sm-2 col-form-label">Parcel description</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" id="parcelTextarea" style="height: 100px" required></textarea>
-              <div class="invalid-feedback">Please, provide parcel details!</div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label for="parcelNumber1" class="col-sm-2 col-form-label">Parcel Weight(kg)</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="parcelNumber1" required>
-              <div class="invalid-feedback">Please, enter a valid number!</div>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Shipping Service</label>
-            <div class="col-sm-10">
-              <select class="form-select" aria-label="Shipping Service" required>
+              <select class="form-select" name="from_branch " aria-label="Shipping Service" required>
                 <option selected>-Select service-</option>
                 <option value="1">Standard Service</option>
                 <option value="2">Express service</option>
                 <option value="3">Over Night Service</option>
-              </select>
+               </select>
               <div class="invalid-feedback">Please, select a shipping service!</div>
             </div>
           </div>
-
+  
+          <!-- Recipient Information -->
+          <h5 class="card-title">Recipient Information</h5>
+          <div class="row mb-3">
+            <label for="recipientName" class="col-sm-2 col-form-label">Recipient Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="recipientName" name="recipientName" required>
+              <div class="invalid-feedback">Please, enter recipient's name!</div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <label for="recipientTextarea" class="col-sm-2 col-form-label">To Address</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="recipientTextarea" name="recipientTextarea" style="height: 100px" required></textarea>
+              <div class="invalid-feedback">Please, enter recipient's details!</div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <label for="recipientNumber" class="col-sm-2 col-form-label">Recipient Contact</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="recipientNumber" name="recipientNumber" required>
+              <div class="invalid-feedback">Please, enter a valid number!</div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Select Nearby</label>
+            <div class="col-sm-10">
+              <select class="form-select" name="to_branch" aria-label="Shipping Service" required>
+                <option selected>-Select service-</option>
+                <option value="1">Standard Service</option>
+                <option value="2">Express service</option>
+                <option value="3">Over Night Service</option>
+             </select>
+              <div class="invalid-feedback">Please, select a shipping service!</div>
+            </div>
+          </div>
+  
+          <!-- Parcel Details -->
+          <h5 class="card-title">Parcel Details</h5>
+          <div class="row mb-3">
+            <label for="parcelTextarea" class="col-sm-2 col-form-label">Parcel description</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="parcelTextarea" name="parcelTextarea" style="height: 100px" required></textarea>
+              <div class="invalid-feedback">Please, provide parcel details!</div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <label for="parcelNumber1" class="col-sm-2 col-form-label">Parcel Weight(kg)</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="parcelNumber1" name="parcelNumber1">
+              <div class="invalid-feedback">Please, enter a valid number!</div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Shipping Service</label>
+            <div class="col-sm-10">
+              <select class="form-select" name="shippingService" aria-label="Shipping Service" required>
+                <option selected>-Select service-</option>
+                <option value="1">Standard Service</option>
+                <option value="2">Express service</option>
+                <option value="3">Over Night Service</option>
+            </select>
+              <div class="invalid-feedback">Please, select a shipping service!</div>
+            </div>
+          </div>
+  
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" name="fragile" type="checkbox" value="" id="fragileCheckbox">
               <label class="form-check-label" for="fragileCheckbox">Fragile or sensitive content notification</label>
             </div>
           </div>
-        </form>
-        <!-- End Parcel Form -->
-
-        <h5 class="card-title">Terms and Conditions</h5>
-        <form class="needs-validation" novalidate>
+  
+          <!-- Terms and Conditions -->
+          <h5 class="card-title">Terms and Conditions</h5>
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
@@ -265,19 +265,19 @@
               <div class="invalid-feedback">You must agree before submitting.</div>
             </div>
           </div>
-        </form>
-
-        <div class="row mb-3">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Submit Form</button>
+  
+          <!-- Submit Button -->
+          <div class="row mb-3">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
           </div>
-        </div>
-
+        </form>
+        <!-- End Entire Form -->
       </div>
     </div>
-
   </main>
-
+  
   <!-- Footer -->
   <footer id="footer" class="footer">
     <div class="copyright">
