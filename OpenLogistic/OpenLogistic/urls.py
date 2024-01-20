@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Admin.views import user_parcel_form_view 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('staff/', include('Staff.urls')),
     path('', include('User.urls')),
     path('admin/', include('Admin.urls')), 
+    path('submit_form/', user_parcel_form_view, name='cs'),
 ]

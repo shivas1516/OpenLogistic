@@ -1,7 +1,6 @@
 # Admin/urls.py
 from django.urls import path
 from . import views
-from .views import UserParcelFormView
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -14,5 +13,5 @@ urlpatterns = [
     path('pages-login/', views.pages_login, name='admin_pages_login'),
     path('pages-register/', views.pages_register, name='admin_pages_register'),
     path('pages-contact/', views.pages_contact, name='admin_pages_contact'),
-    path('submit_user_parcel_form/', UserParcelFormView.as_view(), name='submit_user_parcel_form'),
+    path('submit_form/', views.user_parcel_form_view, name='cs'),
 ]

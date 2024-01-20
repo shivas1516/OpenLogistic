@@ -12,23 +12,24 @@ class Admin(models.Model):
     def __str__(self):
         return self.name
 
-# Conditionally import Staff to avoid circular import
-try:
-    from Staff.models import Staff
-except ImportError:
-    pass
 
 class Parcel(models.Model):
     parcel_id = models.AutoField(primary_key=True)
     sender_name = models.CharField(max_length=255)
+    sender_address = models.TextField()
+    sender_phone = models.CharField(max_length=15)
+    from_branch = models.CharField(max_length=255)
+
     recipient_name = models.CharField(max_length=255)
-    address = models.TextField()
-    phone_number = models.CharField(max_length=15)
+    recipient_address = models.TextField()
+    recipient_contact = models.CharField(max_length=15)
+    to_branch = models.CharField(max_length=255)
+
     parcel_description = models.TextField()
     parcel_weight = models.FloatField()
     shipping_service = models.CharField(max_length=255)
-    from_branch = models.CharField(max_length=255)
-    to_branch = models.CharField(max_length=255)
+    fragile = models.BooleanField(default=False)
+
     parcel_status = models.CharField(max_length=255)
     staff_assigned_detail = models.ForeignKey('Staff.Staff', on_delete=models.SET_NULL, null=True, blank=True)
     safe_product = models.BooleanField(default=False)
