@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel List</title>
+</head>
+<body>
+    <h1>Parcel List</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Parcel ID</th>
+                <th>Sender Name</th>
+                <th>Sender Address</th>
+                <th>Sender Phone</th>
+                <th>From Branch</th>
+                <th>Recipient Name</th>
+                <th>Recipient Address</th>
+                <th>Recipient Contact</th>
+                <th>To Branch</th>
+                <th>Description</th>
+                <th>Weight</th>
+                <th>Service</th>
+                <th>Sensitive Content</th>
+                <th>Status</th>
+                <th>Staff Assigned</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for parcel in parcels %}
+                <tr>
+                    <td>{{ parcel.parcel_id }}</td>
+                    <td>{{ parcel.sender_name }}</td>
+                    <td>{{ parcel.sender_address }}</td>
+                    <td>{{ parcel.sender_phone }}</td>
+                    <td>{{ parcel.from_branch }}</td>
+                    <td>{{ parcel.recipient_name }}</td>
+                    <td>{{ parcel.recipient_address }}</td>
+                    <td>{{ parcel.recipient_contact }}</td>
+                    <td>{{ parcel.to_branch }}</td>
+                    <td>{{ parcel.parcel_description }}</td>
+                    <td>{{ parcel.parcel_weight }}</td>
+                    <td>{{ parcel.shipping_service }}</td>
+                    <td>{{ parcel.sensitive_content }}</td>
+                    <td>{{ parcel.parcel_status }}</td>
+                    <td>{{ parcel.staff_assigned_detail }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

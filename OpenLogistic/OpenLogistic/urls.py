@@ -16,14 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Admin.views import user_parcel_form_view 
-from Admin.views import track_parcel_view
-
+from landing.views import user_parcel_form_view, track_parcel_view, parcel_list
 
 urlpatterns = [
-    path('staff/', include('Staff.urls')),
-    path('', include('User.urls')),
-    path('admin/', include('Admin.urls')), 
+    path('', include('landing.urls')),
     path('submit_form/', user_parcel_form_view, name='cs'),
     path('track-parcel/', track_parcel_view, name='track_parcel_view'),
 ]
